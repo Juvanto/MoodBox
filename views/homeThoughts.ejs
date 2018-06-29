@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homepage</title>
+	<!--在此ejs中引用的静态资源URL前必须加上'/'，不然无法访问-->
+	<link rel="stylesheet" href="/css/homeThoughts.css">
+	<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--infor-change是弹出框，修改个人信息-->
+<div class='infor-change' id='changeInfor'>
+	<form action="/infor" method="post" enctype='multipart/form-data' autocomplete='off' id='inforForm' class='infor-form'>
+	<span>昵称：</span><input type="text" name='inforFormName' id='inforFormName'><br>
+    <span>签名：</span><input type="text" name='inforFormSign' id='inforFormSign'><br>
+	<span>头像：</span>
+	<img src=<%= userhead %> alt="Error" id='inforFormShow'>
+	<input type="button" value='更改头像' id='inforFormHead'><br>
+	<input type="button" value='确定' id='inforFormSure'>
+	<input type="button" value='取消' id='inforFormCancel'>
+	<p id='inforFormWarn'></p>
+	<input type="file" name='inforFormFile' id='inforFormFile'>
+	</form>
+</div>
+
+<!--主页面-->
+<div class='banner'><div class='in-banner'>-MoodBox-</div></div>
+<div class='main-content'>
+	<div class='left-column'>
+	    <!--self-infor个人信息框-->
+		<div class='self-infor'>
+			<div class='self-img'>
+			    <img src=<%= userhead %> alt="Error" class='headImg'>
+				<div class='self-img-cover'><span class='self-img-change' id='changeClick'>修改个人资料</span></div>
+				</div>
+			<p class='self-name' id='selfName'><%= username %></p>
+			<p class='self-sign' id='selfSign'><%= signature %></p>
+		</div>
+		<div class='little-container'>
+			<p class='sec-title'>Little-Thoughts</p>
+			<!--在/thoughts后加上一个参数，确定请求在哪个页面提交-->
+			<form action="/thoughts_submit?current_page=th" method='post' id='littleForm'>
+				<textarea name="thoughts" id="thoughts" class='little-input' placeholder='Write your little thoughts'></textarea>
+				<p class='little-warn' id='littleWarn'></p>
+				<input class='little-submit' id='littleSubmit' type="button" value='发布'>
+			</form>
+			<p class='little-show'><%= thoughts0 %></p>
+			<p class='little-time'><%= thoughtsTime0 %></p>
+			<p class='little-show'><%= thoughts1 %></p>
+			<p class='little-time'><%= thoughtsTime1 %></p>
+			<p class='little-show'><%= thoughts2 %></p>
+			<p class='little-time'><%= thoughtsTime2 %></p>
+			<p class='little-show'><%= thoughts3 %></p>
+			<p class='little-time'><%= thoughtsTime3 %></p>
+			<p class='little-show'><%= thoughts4 %></p>
+			<p class='little-time'><%= thoughtsTime4 %></p>
+			<p class='little-more'><a href="/homepage/thoughts?thoughts_page=1">更多</a></p>	
+		</div>		
+	</div>
+	<div class='right-column'>
+		<div class='th-container'> 
+			<div class='th-banner'>
+			Little-Thoughts
+			</div>
+			<!--th-前缀是详细的thoughts列表-->
+			<!--data-number是服务端thoughts的编号，删除时用到-->
+			<div class='th-list' id='thList'>
+			    <div class='th-backhome'>
+					<span id='thBackHome'>Homepage</span>
+			    </div>
+				<p class="th-content" ><%= th0 %></p>
+				<p class='th-time th-content <%=thTimeCla0%>'><%= thTime0 %><span data-number=<%=thNumber0%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th1 %></p>
+				<p class='th-time th-content <%=thTimeCla1%>'><%= thTime1 %><span data-number=<%=thNumber1%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th2 %></p>
+				<p class='th-time th-content <%=thTimeCla2%>'><%= thTime2 %><span data-number=<%=thNumber2%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th3 %></p>
+				<p class='th-time th-content <%=thTimeCla3%>'><%= thTime3 %><span data-number=<%=thNumber3%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th4 %></p>
+				<p class='th-time th-content <%=thTimeCla4%>'><%= thTime4 %><span data-number=<%=thNumber4%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th5 %></p>
+				<p class='th-time th-content <%=thTimeCla5%>'><%= thTime5 %><span data-number=<%=thNumber5%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th6 %></p>
+				<p class='th-time th-content <%=thTimeCla6%>'><%= thTime6 %><span data-number=<%=thNumber6%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th7 %></p>
+				<p class='th-time th-content <%=thTimeCla7%>'><%= thTime7 %><span data-number=<%=thNumber7%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th8 %></p>
+				<p class='th-time th-content <%=thTimeCla8%>'><%= thTime8 %><span data-number=<%=thNumber8%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				<p class="th-content"><%= th9 %></p>
+				<p class='th-time th-content <%=thTimeCla9%>'><%= thTime9 %><span data-number=<%=thNumber9%> class='fa fa-times fa-fw th-delete' title="删除这个thought"></span></p>
+				
+				<div class='th-pages' id='thPages'>
+				<span class=<%= thBtnClass0 %>><%= thBtn0 %></span>
+				<span class=<%= thBtnClass1 %>><%= thBtn1 %></span>
+				<span class=<%= thBtnClass2 %>><%= thBtn2 %></span>
+				<span class=<%= thBtnClass3 %>><%= thBtn3 %></span>
+				<span class=<%= thBtnClass4 %>><%= thBtn4 %></span>
+				<span class=<%= thBtnClass5 %>><%= thBtn5 %></span>
+				<span class=<%= thBtnClass6 %>><%= thBtn6 %></span>
+				<span class=<%= thBtnClass7 %>><%= thBtn7 %></span>
+				<span class=<%= thBtnClass8 %>><%= thBtn8 %></span>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+<script src="/scripts/jquery-3.2.1.js"></script>
+<script src='/scripts/homeThoughts.js'></script>	
+</body>
+</html>

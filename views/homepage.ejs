@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homepage</title>
+	<link rel="stylesheet" href="/css/homepage.css">
+	<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--infor-change是弹出框，修改个人信息-->
+<div class='infor-change' id='changeInfor'>
+	<form action="/infor" method="post" enctype='multipart/form-data' autocomplete='off' id='inforForm' class='infor-form'>
+	<span>昵称：</span><input type="text" name='inforFormName' id='inforFormName'><br>
+    <span>签名：</span><input type="text" name='inforFormSign' id='inforFormSign'><br>
+	<span>头像：</span>
+	<img src=<%= userhead %> alt="Error" id='inforFormShow'>
+	<input type="button" value='更改头像' id='inforFormHead'><br>
+	<input type="button" value='确定' id='inforFormSure'>
+	<input type="button" value='取消' id='inforFormCancel'>
+	<p id='inforFormWarn'></p>
+	<input type="file" name='inforFormFile' id='inforFormFile'>
+	</form>
+</div>
+
+<!--主页面-->
+<div class='banner'><div class='in-banner'>-MoodBox-</div></div>
+<div class='main-content'>
+	<div class='left-column'>
+	    <!--self-infor个人信息框-->
+		<div class='self-infor'>
+			<div class='self-img'>
+			    <img src=<%= userhead %> alt="Error" class='headImg'>
+				<div class='self-img-cover'><span class='self-img-change' id='changeClick'>修改个人资料</span></div>
+				</div>
+			<p class='self-name' id='selfName'><%= username %></p>
+			<p class='self-sign' id='selfSign'><%= signature %></p>
+		</div>
+		<div class='little-container'>
+			<p class='sec-title'>little-thoughts</p>
+			<form action="/thoughts_submit?current_page=home" method='post' id='littleForm'>
+				<textarea name="thoughts" id="thoughts" class='little-input' placeholder='Write your little thoughts'></textarea>
+				<p class='little-warn' id='littleWarn'></p>
+				<input class='little-submit' id='littleSubmit' type="button" value='发布'>
+			</form>
+			<p class='little-show'><%= thoughts0 %></p>
+			<p class='little-time'><%= thoughtsTime0 %></p>
+			<p class='little-show'><%= thoughts1 %></p>
+			<p class='little-time'><%= thoughtsTime1 %></p>
+			<p class='little-show'><%= thoughts2 %></p>
+			<p class='little-time'><%= thoughtsTime2 %></p>
+			<p class='little-show'><%= thoughts3 %></p>
+			<p class='little-time'><%= thoughtsTime3 %></p>
+			<p class='little-show'><%= thoughts4 %></p>
+			<p class='little-time'><%= thoughtsTime4 %></p>
+			<!--发送带参数page=1的get请求，表示请求第一页thoughts-->
+			<p class='little-more'><a href="/homepage/thoughts?thoughts_page=1">更多</a></p>	
+		</div>
+	</div>
+	<div class='right-column'>
+		<div class='mo-container'>
+			<div class="mo-banner">
+			Moods
+			</div>
+			<div class="mo-list" id='moList'>
+			<div class='mo-write'>
+				<span id='moWrite'>+Add Moods</span>
+			</div>
+			<p class='mo-title' data-number=<%=moNumber0%>><%= moTitle0 %></p>
+			<p class='mo-short'><%= moShort0 %></p>
+			<p class='mo-time'><%= moTime0 %></p>
+			<p class='mo-title' data-number=<%=moNumber1%>><%= moTitle1 %></p>
+			<p class='mo-short'><%= moShort1 %></p>
+			<p class='mo-time'><%= moTime1 %></p>
+			<p class='mo-title' data-number=<%=moNumber2%>><%= moTitle2 %></p>
+			<p class='mo-short'><%= moShort2 %></p>
+			<p class='mo-time'><%= moTime2 %></p>
+			<p class='mo-title' data-number=<%=moNumber3%>><%= moTitle3 %></p>
+			<p class='mo-short'><%= moShort3 %></p>
+			<p class='mo-time'><%= moTime3 %></p>
+			<p class='mo-title' data-number=<%=moNumber4%>><%= moTitle4 %></p>
+			<p class='mo-short'><%= moShort4 %></p>
+			<p class='mo-time'><%= moTime4 %></p>
+			<p class='mo-title' data-number=<%=moNumber5%>><%= moTitle5 %></p>
+			<p class='mo-short'><%= moShort5 %></p>
+			<p class='mo-time'><%= moTime5 %></p>
+			<p class='mo-title' data-number=<%=moNumber6%>><%= moTitle6 %></p>
+			<p class='mo-short'><%= moShort6 %></p>
+			<p class='mo-time'><%= moTime6 %></p>
+			<p class='mo-title' data-number=<%=moNumber7%>><%= moTitle7 %></p>
+			<p class='mo-short'><%= moShort7 %></p>
+			<p class='mo-time'><%= moTime7 %></p>
+			<p class='mo-title' data-number=<%=moNumber8%>><%= moTitle8 %></p>
+			<p class='mo-short'><%= moShort8 %></p>
+			<p class='mo-time'><%= moTime8 %></p>
+			<p class='mo-title' data-number=<%=moNumber9%>><%= moTitle9 %></p>
+			<p class='mo-short'><%= moShort9 %></p>
+			<p class='mo-time'><%= moTime9 %></p>
+			<div class='mo-pages' id='moPages'>
+				<span class=<%= moBtnClass0 %>><%= moBtn0 %></span>
+				<span class=<%= moBtnClass1 %>><%= moBtn1 %></span>
+				<span class=<%= moBtnClass2 %>><%= moBtn2 %></span>
+				<span class=<%= moBtnClass3 %>><%= moBtn3 %></span>
+				<span class=<%= moBtnClass4 %>><%= moBtn4 %></span>
+				<span class=<%= moBtnClass5 %>><%= moBtn5 %></span>
+				<span class=<%= moBtnClass6 %>><%= moBtn6 %></span>
+				<span class=<%= moBtnClass7 %>><%= moBtn7 %></span>
+				<span class=<%= moBtnClass8 %>><%= moBtn8 %></span>
+			</div>
+			</div>
+			<div class="mo-add-none" id='moAdd'>
+			    <form action="/moods_submit" method='post' class='mo-add-form' id='moAddForm'>
+				<input type="text" name='moodsTitle' class='mo-add-title' id='moAddTitle' placeholder='添加标题' autocomplete='off'>
+				<textarea name="moodsContent" class='mo-add-content' id='moAddContent' placeholder='Add your moods'></textarea>
+				<p class='mo-add-warn' id='moAddWarn'></p>
+				<input type="button" class='mo-add-button' id='moAddSubmit' value='提交'>
+				<input type="button" class='mo-add-button' id='moAddCancel' value="取消" >
+				</form>
+			</div>
+        </div>
+	</div>
+</div>
+<script src="scripts/jquery-3.2.1.js"></script>
+<script src='scripts/homepage.js'></script>	
+</body>
+</html>

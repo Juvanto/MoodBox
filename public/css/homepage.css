@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'yuehei';
+  src: url('../fonts/yuehei.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+body{padding:0;
+     margin:0;
+	 font-family:'Microsoft yahei';
+	 background-color:RGB(220,220,220);}
+.banner{width:100%;
+        height:80px;
+		background-color:RGB(60,60,60);
+		}
+.in-banner{height:80px;
+           width:1000px;
+		   margin:0 auto;
+		   font-size:65px;
+		   font-family:'yuehei';
+		   color:RGB(225,55,108);
+		   line-height:80px;
+		   }
+.main-content{width:1000px;
+              height:100px;
+			  margin:10px auto;
+			  }
+.left-column{width:250px;
+             float:left;}
+.right-column{width:740px;
+              float:right;
+			  height:800px;
+			  background-color:white; }	
+
+/*self-前缀是个人信息框*/
+.self-infor{width:inherit;
+            height:260px;
+		    background-color:white;
+			text-align:center;
+		    box-shadow:5px 5px 5px #888888;
+		    }		  
+.self-img{width:170px;
+          height:170px;
+		  display:inline-block;
+		  margin:20px 0 0 0;
+		  background-color:RGB(60,60,60);
+          position:relative;
+		  }
+.self-img-cover{width:inherit;
+                height:inherit;
+				background-color:RGBA(0,0,0,0.5);
+				line-height:170px;
+				color:RGB(255,255,255);
+				font-size:15px;
+				position:absolute;
+				top:0px;
+				visibility:hidden;}
+.headImg{width:inherit;
+         height:inherit;
+		 }
+.self-img:hover .self-img-cover{visibility:visible;}
+.self-img-change:hover{text-decoration:underline;
+                       cursor:pointer;}
+.self-name{font-size:20px;
+           margin:0;
+		   display:inline-block;
+		   width:210px;
+		   height:25px;
+		   line-height:25px;
+		   overflow:hidden;}		 
+.self-sign{font-size:12px; 
+           display:inline-block;
+		   width:210px;
+		   height:18px;
+           margin:0;
+		   overflow:hidden;}
+
+/*infor-前缀是弹出窗口*/		   
+.infor-change{width:350px;
+              height:250px;
+			  top:50%;
+			  left:50%;
+			  background-color:RGB(255,255,255);
+			  border:3px solid RGB(225,55,108);
+			  position:absolute;
+			  margin-left:-175px;
+	          margin-top:-125px;
+			  border-radius:25px;
+			  box-shadow:8px 8px 5px #888888;
+			  text-align:center;
+			  display:none;}	
+.infor-form{display:inline-block;/*inline-block可使宽度自适应*/
+            text-align:left;
+			margin-top:25px;}
+.infor-form *{margin:5px 0;
+              vertical-align: middle;}			
+.infor-form input[type=text]{width:200px;
+                             outline:none;}			
+.infor-form input[type=button]{background-color:RGB(225,55,108);
+                               border:none;
+							   width:80px;
+							   color:RGB(255,255,255);
+							   outline:none;
+							   cursor:pointer;
+							   height:30px;}	
+.infor-form input[type=button]:hover{text-decoration:underline;}
+.infor-form input[type=button]:active{background-color:RGB(240,70,123);}							   							   
+#inforFormSure{margin-right:10px;}							   
+#inforFormCancel{margin-left:10px;}
+#inforFormFile{display:none;}
+#inforFormWarn{color:RGB(225,55,108);
+               font-size:14px;
+			   width:270px;}
+#inforFormShow{width:80px;
+               height:80px;
+			   margin:0 10px;}
+
+			   
+.sec-title{margin:0 10px;
+           padding:3px 0 10px 0;
+		   font-size:20px;
+		   color:RGB(225,55,108);}
+		   
+/*little是little-thoughts模块前缀*/
+.little-container{width:inherit;                  
+		          margin:10px 0;
+                  padding-bottom:50px;				  
+		          background-color:white;
+				  box-shadow:5px 5px 5px #888888;}
+.little-input{width:220px;
+              height:75px;
+			  resize:none;
+			  display:block;
+			  border-radius:5px;
+			  outline-color:RGB(225,55,108);
+			  margin:0 auto;}
+.little-warn{display:inline-block;
+	         font-size:12px;
+			 width:100px;
+             color:RGB(225,55,108);
+			 height:15px;
+			 margin:0 12px;
+			 }
+.little-submit{width:60px;
+               height:25px;
+               margin:5px 0 0 45px;
+			   background-color:RGB(225,55,108);
+			   outline:none;
+			   border:none;
+			   cursor:pointer;
+			   color:white}
+.little-submit:hover{text-decoration:underline;}
+.little-submit:active{background-color:RGB(240,70,123);}
+.little-show{width:200px;
+             margin:30px auto 0 auto;
+			 text-align: justify;
+			 font-family:'SimSun';
+			 font-size:14px;
+			 line-height:18px;}
+.little-more{text-align:right;
+             margin:20px auto 0 auto;
+			 width:200px;}
+.little-more a{font-size:14px;text-decoration:none;
+               color:RGB(225,55,108);}
+.little-more a:hover{text-decoration:underline;}		 
+.little-time{text-align:right;
+             margin:5px auto;
+			 width:200px;
+			 font-size:10px;
+			 color:RGB(225,55,108);}		
+							   
+/*mo-前缀是moods列表*/
+.right-column{box-shadow:5px 5px 5px #888;
+	          padding-bottom:50px;
+              margin-bottom:50px;}			 
+.mo-container{width:inherit;             
+		      background-color:white;
+			  }							   
+.mo-banner{color:RGB(225,55,108);
+		   font-family:'yuehei';
+		   font-size:30px;
+		   text-align:center;
+		   padding:10px 0;
+		   margin:0 50px 10px 50px;
+		   border-bottom:1px solid RGB(230,230,230);}
+/*mo-write是Add Moods按键*/
+.mo-write{margin:0 50px 10px 50px;
+          text-align:right;}
+.mo-write span{font-size:16px;
+               color:white;
+			   font-family:'yuehei';
+	           background-color:RGB(225,55,108);
+               display:inline-block;
+               width:120px;
+               text-align:center;
+               height:25px;
+               line-height:25px;
+               border-radius:5px;
+               cursor:pointer;			   
+               }
+.mo-write span:hover{text-decoration:underline;}
+.mo-write span:active{background-color:RGB(240,70,123);}
+.mo-title{margin:25px 50px 5px 50px;
+          font-size:20px;
+		  cursor:pointer;
+          color:RGB(225,55,108);}
+.mo-list{display:block;
+         padding-bottom:50px;}
+.mo-list-none{display:none;}
+.mo-title:hover{text-decoration:underline;}	
+.mo-short{margin:0 50px 5px 50px;
+          text-align: justify;
+		  font-size:15px;
+		  color:RGB(140,140,140);}
+.mo-time{margin:0 50px 5px 50px;
+	     font-size:14px;
+         margin-top:0;	  
+         color:RGB(140,140,140);}
+.mo-pages{text-align:center;
+          font-size:0;
+		  margin:30px 0;}
+/*在后端会用到button的三种样式*/		  
+.mo-button{display:inline-block;
+           margin:0 5px;
+           width:30px;
+		   height:25px;
+		   color:white;
+		   font-size:14px;
+		   line-height:25px;
+		   text-align:center;
+		   background-color:RGB(180,180,180);
+		   cursor:pointer;
+		   }
+/*按钮被选中时的样式*/		   
+.mo-button-select{display:inline-block;
+                  margin:0 5px;
+                  width:30px;
+		          height:25px;
+		          color:white;
+		          font-size:14px;
+		          line-height:25px;
+		          text-align:center;
+		          background-color:RGB(225,55,108);
+				  cursor:pointer;
+                  }	
+.mo-button-none{display:none;}				  
+.mo-button:hover{background-color:RGB(225,55,108);
+                 text-decoration:underline;}
+.mo-button-select:hover{background-color:RGB(225,55,108);
+                        text-decoration:underline;}	
+/*mo-add是写moods的模块*/						
+.mo-add-none{display:none}		 
+.mo-add{margin:0 50px 5px 50px;
+        display:block;}
+.mo-add-form{width:550px;
+	     margin:0 auto;}							   						   
+.mo-add-title{display:block;
+              width:550px;
+			  height:30px;
+			  margin:10px auto 25px auto;
+			  outline:none;
+			  font-size:20px;
+			  font-family:'Microsoft yahei';
+			  border:none;
+			  border-bottom:solid 1px RGB(225,55,108);}	
+.mo-add-content{display:block;
+                margin:10px auto 5px auto;
+				width:550px;
+				height:600px;
+				outline:none;
+				font-size:14px;
+				resize:none;}
+.mo-add-warn{color:RGB(225,55,108);
+             margin:0 0 5px 0;
+			 font-size:16px;
+			 height:20px;}
+.mo-add-button{background-color:RGB(225,55,108);
+               border:none;
+			   width:50px;
+			   height:25px;
+			   color:white;
+			   margin-right:20px;
+			   cursor:pointer;
+			   outline:none;}
+.mo-add-button:hover{text-decoration:underline;}								   
+							   
+							   
+							   
+		
+
+
+
+
+
+
+		
+							   
+							   
+							   
+		   
+		   
+		   
+		   
+		   
+		   

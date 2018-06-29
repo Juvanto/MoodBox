@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" >
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<div class='login' id='login'>
+	<form action="/login" method='get' class='login-form' id='logform'>
+	    <p class='title'>-MoodBox-</p>
+		<div class='items'>
+		    <span class="fa fa-user-o fa-fw"></span>
+		    <span class='label'>账号：</span><input type="text" name="account" id='account' class='text'>
+	    </div>
+		<div class='items'>
+		<span class="fa fa-lock fa-fw"></span><span class='label'>密码：</span>
+		<input name="password" id='password' class='text' type='password'>
+	    </div>
+		<div class='submit items'>
+			<input type="button" value='注册' id='signbu'>
+			<input type="button" value='登录' id='logbu'>
+		</div>
+		<p class='warning' id='warning'></p>
+	</form>
+</div>
+<script src="scripts/jquery-3.2.1.js"></script>
+<script src="scripts/index.js"></script>
+</body>
+</html>

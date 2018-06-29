@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homepage</title>
+	<link rel="stylesheet" href="/css/homeMoods.css">
+</head>
+<body>
+<!--infor-change是弹出框，修改个人信息-->
+<div class='infor-change' id='changeInfor'>
+	<form action="/infor" method="post" enctype='multipart/form-data' autocomplete='off' id='inforForm' class='infor-form'>
+	<span>昵称：</span><input type="text" name='inforFormName' id='inforFormName'><br>
+    <span>签名：</span><input type="text" name='inforFormSign' id='inforFormSign'><br>
+	<span>头像：</span>
+	<img src=<%= userhead %> alt="Error" id='inforFormShow'>
+	<input type="button" value='更改头像' id='inforFormHead'><br>
+	<input type="button" value='确定' id='inforFormSure'>
+	<input type="button" value='取消' id='inforFormCancel'>
+	<p id='inforFormWarn'></p>
+	<input type="file" name='inforFormFile' id='inforFormFile'>
+	</form>
+</div>
+
+<!--主页面-->
+<div class='banner'><div class='in-banner'>-MoodBox-</div></div>
+<div class='main-content'>
+	<div class='left-column'>
+	    <!--self-infor个人信息框-->
+		<div class='self-infor'>
+			<div class='self-img'>
+			    <img src=<%= userhead %> alt="Error" class='headImg'>
+				<div class='self-img-cover'><span class='self-img-change' id='changeClick'>修改个人资料</span></div>
+				</div>
+			<p class='self-name' id='selfName'><%= username %></p>
+			<p class='self-sign' id='selfSign'><%= signature %></p>
+		</div>
+		<div class='little-container'>
+			<p class='sec-title'>little-thoughts</p>
+			<form action="/thoughts" method='post' id='littleForm'>
+				<textarea name="thoughts" id="thoughts" class='little-input' placeholder='Write your little thoughts'></textarea>
+				<p class='little-warn' id='littleWarn'></p>
+				<input class='little-submit' id='littleSubmit' type="button" value='发布'>
+			</form>
+			<p class='little-show'><%= thoughts0 %></p>
+			<p class='little-time'><%= thoughtsTime0 %></p>
+			<p class='little-show'><%= thoughts1 %></p>
+			<p class='little-time'><%= thoughtsTime1 %></p>
+			<p class='little-show'><%= thoughts2 %></p>
+			<p class='little-time'><%= thoughtsTime2 %></p>
+			<p class='little-show'><%= thoughts3 %></p>
+			<p class='little-time'><%= thoughtsTime3 %></p>
+			<p class='little-show'><%= thoughts4 %></p>
+			<p class='little-time'><%= thoughtsTime4 %></p>
+			<p class='little-more'><a href="/homepage/thoughts?thoughts_page=1">更多</a></p>	
+		</div>
+		
+	</div>
+	<div class='right-column'>
+	    <div class='mode-container'>
+		<div class="mode-banner">
+			Moods
+		</div>
+		<div class="mode-article" id='modeArticle'>
+			<div class='mode-backhome'>
+				<span id='modeBackHome'>Homepage</span>
+			</div>
+		<p class='mode-title' id='modeTitle'><%= modeTitle %></p>
+		<p class="mode-time"><%= modeTime %></p>
+		<p class="mode-content" id='modeContent'><%= modeContent %></p>
+		<span class='mode-button' id='modeEditBtn'>编辑</span><span class='mode-button' id='modeDelete'  data-number=<%= modeNumber %>>删除</span>
+		</div>
+		<div class="mode-edit-none" id='modeEdit'>
+			 <form  method='post' class='mode-edit-form' id='modeEditForm'>
+		     <input name="modeEditTitle" type="text" class='mode-edit-title'>
+			 <textarea name="modeEditContent" class='mode-edit-content'></textarea>
+			 <p class='mode-edit-warn' id=''></p>
+			 <input type="button" class='mode-edit-button' id='modeEditSubmit' value='提交' data-number=<%= modeNumber %>>
+			 <input type="button" class='mode-edit-button' id='modeEditCancel' value="取消">
+			 </form>
+		</div>
+		</div>
+	</div>
+</div>
+<script src="/scripts/jquery-3.2.1.js"></script>
+<script src='/scripts/homeMoods.js'></script>	
+</body>
+</html>

@@ -6,12 +6,6 @@ var getTime=require('../self_modules/getTime.js')//自定义模块，获取时�
 var bodyParser = require('body-parser');
 var mongodb=require('mongodb');
 var async = require('async');
-//router.get的路径用'/'的原因:此处是相对的路径，代表该页面处理的路径
-//防止用户直接访问/thoughts       
-router.get('/',function(req,res,next){if(!req.session.account)
-	                                    {res.send('请先<a href="/">登录</a>！')}								       
-                                      else{next()}
-									 })
 //先用bodyParser对post请求的请求体作处理									 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));									 

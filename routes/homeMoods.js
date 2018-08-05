@@ -6,13 +6,7 @@ var bodyParser = require('body-parser');
 var getTime=require('../self_modules/getTime.js');//自定义模块，获取时间
 var getBtn=require('../self_modules/getBtn.js');
 var mongodb=require('mongodb');
-var async = require('async');
-//router.get的路径用'/'的原因:此处是相对的路径，代表该页面处理的路径  
-router.get('/',function(req,res,next){if(!req.session.account)
-	                                    {res.send('请先<a href="/">登录</a>！')}								       
-                                      else{next()}
-									 })
-									 									 
+var async = require('async');									 									 
 router.get('/', function(req,res){
         var MongoClient = mongodb.MongoClient;
 	    var dburl = 'mongodb://localhost:27017';

@@ -6,8 +6,7 @@ var path=require('path');
 var mongodb=require('mongodb');
 var async = require('async');
 router.get('/', function(req,res){ 
-        if(!req.session.account){res.send(res.send('请先<a href="/">登录</a>!'))}
-		var MongoClient = mongodb.MongoClient;
+	    var MongoClient = mongodb.MongoClient;
 	    var dburl = 'mongodb://localhost:27017';
 		 MongoClient.connect(dburl, function (err,db){  
 	        if (err) {console.log(err)}

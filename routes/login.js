@@ -5,8 +5,6 @@ var path=require('path');
 var bodyParser = require('body-parser');
 var mongodb=require('mongodb');
 var async = require('async');
-//router.get的路径用'/'的原因:此处是相对的路径，代表该页面处理的路径
-//防止用户直接访问/login 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));
 router.use('/',function(req,res,next){if(req.method==='POST')

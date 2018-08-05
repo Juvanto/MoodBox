@@ -8,19 +8,21 @@ var async = require('async');
 //router.get的路径用'/'的原因:此处是相对的路径，代表该页面处理的路径
 //防止用户直接访问/login 
 router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({extended:false}));      
-router.post('/',function(req,res,next){if(!req.body.account||!req.body.password)
-                                     {res.send('登录失败！')}
-								      //如果是通过表单访问/signin，则交给下一个中间件
-                                      else{next()}
-									  })									 
+router.use(bodyParser.urlencoded({extended:false}));
+router.use('/',function(req,res,next){if(req.method==='POST')
+                                      {next();}
+                                      else{res.send('访问错误！')}                    
+                                       }
+                                       )//只允许以post方法访问  									 
 router.post('/', function(req,res){
       var MongoClient = mongodb.MongoClient;
 	    var dburl = 'mongodb://localhost:27017';
 	    async.waterfall([
-	    	                 function(callback){
+	    	         function(callback){
                          //连接数据库
-                         MongoClient.connect(dburl, function (err,db){                        
+                         MongoClient.connect(dburl, function (err,db){ 
+		          //若连接数据库失败，则err参数就是一个Error实例，后续函数不再执行，Error实例会传递给总回调函数处理；
+                          //若连接数据库成功，则err参数是null，继续执行后续函数 
                          callback(err,db);
                          })
                          },
@@ -37,8 +39,8 @@ router.post('/', function(req,res){
                            else{if(req.body.password===result[0].password)
                            	       {//返回session
                            	       	req.session.account=req.body.account;	
- 		                                res.json({"message":"登陆成功！",
- 	                                            "url":"/homepage",});
+ 		                        res.json({"message":"登陆成功！",
+ 	                                          "url":"/homepage",});
                            	       }
                                 }
                                callback(err);

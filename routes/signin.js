@@ -5,15 +5,13 @@ var path=require('path');
 var bodyParser = require('body-parser');
 var mongodb=require('mongodb');
 var async = require('async');
-//router.get的路径用'/'的原因:此处是相对的路径，代表该页面处理的路径
-//防止用户直接访问/signin
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));       
-router.post('/',function(req,res,next){if(!req.body.account||!req.body.password)
-                                     {res.send('注册失败！')}
-								     //如果是通过表单访问/signin，则交给下一个中间件
-                                     else{next()}
-									 })
+router.use('/',function(req,res,next){if(req.method==='POST')
+                                      {next();}
+                                      else{res.send('访问错误！')}                    
+                                       }
+                                       )//只允许以post方法访问 
 								 
 router.post('/', function(req,res){
 	    var MongoClient = mongodb.MongoClient;
